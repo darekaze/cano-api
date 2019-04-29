@@ -5,7 +5,11 @@ module.exports = {
     try {
       let posts = null;
       const { offset, limit } = req.query;
-      posts = await Post.findAll({ offset, limit });
+      posts = await Post.findAll({
+        offset,
+        limit,
+        order: [['id', 'DESC']],
+      });
       res.send(posts);
     } catch (err) {
       res.status(500).send({
