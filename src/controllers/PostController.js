@@ -8,7 +8,7 @@ module.exports = {
       posts = await Post.findAll({
         offset,
         limit,
-        order: [['id', 'DESC']],
+        order: [['updatedAt', 'DESC'], ['id', 'DESC']],
       });
       res.send(posts);
     } catch (err) {
