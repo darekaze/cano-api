@@ -6,10 +6,10 @@ const config = require('../config');
 const db = {};
 
 const sequelize = new Sequelize(
-  config.db.database,
-  config.db.user,
-  config.db.password,
-  config.db.options,
+  config.sqlite.database,
+  config.sqlite.user,
+  config.sqlite.password,
+  config.sqlite.options,
 );
 
 fs.readdirSync(__dirname)
