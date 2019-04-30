@@ -5,12 +5,7 @@ const config = require('../config');
 
 const db = {};
 
-const sequelize = new Sequelize(
-  config.sqlite.database,
-  config.sqlite.user,
-  config.sqlite.password,
-  config.sqlite.options,
-);
+const sequelize = new Sequelize(config.pg);
 
 fs.readdirSync(__dirname)
   .filter(file => file !== 'index.js')
